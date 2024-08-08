@@ -1,38 +1,164 @@
-.App {
+/* 전역 스타일 초기화 */
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: LINESeedKR-Bd;
+  line-height: 1.6;
+}
+
+.main {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.intro {
   text-align: center;
+  margin-bottom: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro h1 {
+  font-size: 2.5rem;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.intro p {
+  font-size: 1.2rem;
+  color: #555;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.skills, .education, .projects, .etc {
+  margin-bottom: 40px;
+}
+
+.skills h1, .education h1, .projects h1, .etc h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.skills table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skills td {
+  padding: 10px;
+}
+
+.skills .title {
+  font-size: large;
+  font-weight: bold;
+  width: 30%;
+}
+
+.skills tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.skills tr:nth-child(even) {
+  background-color: #d3d3d3; /* 밝은 회색 코드 */
+}
+
+.skills ul {
+  list-style-type: none;
+}
+
+.skills ul li {
+  padding: 5px 0;
+}
+
+.education-content {
+  margin-bottom: 100px;
+}
+
+.education-content p {
+  margin: 5px 0;
+}
+
+.college {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.edu-details {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.projects-content {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 40%;
+}
+
+.projects-section {
+  margin-bottom: 40px;
+}
+
+.projects-section h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.projects-list p {
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.projects-list p:hover {
+  background-color: #f0f0f0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.etc {
+  text-align: center;
 }
