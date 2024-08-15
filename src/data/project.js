@@ -1,14 +1,17 @@
-import diaryImage from './MyDiary/글정보.png';
+import diaryImageMain from './MyDiary/메인.png';
+import diaryImageLogin from './MyDiary/로그인.png';
+import diaryImageIntro from './MyDiary/첫화면.png';
+import diaryImageAddPost1 from './MyDiary/글추가.png'
+import diaryImageAddPost2 from './MyDiary/글추가2.png'
+import diaryImagePostDetail from './MyDiary/글정보.png'
+import diaryImageMy from './MyDiary/내정보.png';
 
-const getImage = (imageName) => require(`./MyDiary/${imageName}`).default;
-
-const getBase64 = (file) => {
-    console.log(file);
-    if (file) {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-    }
-};
+import smartMirror from './SmartMirror/실제품.png';
+import smartMirrorHardWare from './SmartMirror/하드웨어.png';
+import smartMirrorMain from './SmartMirror/메인페이지.png';
+import smartMirrorOff from './SmartMirror/절전.png';
+import smartMirrorTraining from './SmartMirror/트레이닝.png';
+import smartMirrorDB from './SmartMirror/파이어베이스.png';
 
 export const ownProjects = [
     {
@@ -19,7 +22,13 @@ export const ownProjects = [
         challenges: '몽고DB, 무료 웹 배포',
         results: '일기 작성 및 관리 기능',
         images : {
-            main : getBase64(diaryImage),
+            메인페이지 : diaryImageMain,
+            로그인페이지 : diaryImageLogin,
+            첫화면 : diaryImageIntro,
+            글추가1 : diaryImageAddPost1,
+            글추가2 : diaryImageAddPost2,
+            글정보 : diaryImagePostDetail,
+            내정보 : diaryImageMy
         }
     }
 ];
@@ -27,11 +36,22 @@ export const ownProjects = [
 export const teamProjects = [
     {
         name: '🪞 안면인식을 사용하여 보안성을 강화한 스마트 미러',
-        period: '2022.03 ~ 2023.11',
+        period: '2022.03 ~ 2022.11',
         teamSize: '4명',
         technologies: 'Python, OpenCV, Raspberry Pi',
         challenges: '실시간 얼굴 인식 및 UI 디자인',
-        results: '스마트 미러 시제품 완성'
+        results: '스마트 미러 시제품 완성',
+        images : {
+            시제품 : smartMirror,
+            하드웨어 : smartMirrorHardWare,
+            메인화면 : smartMirrorMain,
+            절전 : smartMirrorOff,
+            트레이닝 : smartMirrorTraining,
+            파이어베이스 : smartMirrorDB
+        },
+        codes : {
+            트레이닝코드 : './data/SmartMirror/recognizer.txt'
+        }
     },
     {
         name: '🧳 여행 메이트 구인 웹 앱',

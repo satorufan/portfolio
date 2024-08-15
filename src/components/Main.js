@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { ownProjects, teamProjects } from '../data/project';
-import diaryImage from '../data/MyDiary/글정보.png';
 
 const Main = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -9,6 +8,8 @@ const Main = () => {
 
     const openModal = (project, type) => {
         setSelectedProject(project);
+        console.log(project.images);
+        console.log(Object.keys(project));
         setModalType(type);
     };
 
@@ -17,11 +18,32 @@ const Main = () => {
         setModalType('');
     };
 
+    const handleBackdropClick = (event) => {
+        // 클릭된 요소가 모달 콘텐츠가 아닐 때만 모달을 닫습니다
+        if (event.target.classList.contains('modal')) {
+            closeModal();
+        }
+    };
+
+    const handleLoadCode = async (project, path) => {
+        if (project) {
+            try {
+                // 비동기적으로 파일을 가져옵니다.
+                const response = await fetch(project.codes[path]);
+                // 응답에서 텍스트를 읽어옵니다.
+                const data = await response.text();
+                // 데이터 반환
+                console.log(data)
+                return data;
+            } catch (error) {
+                console.error('Error fetching file:', error);
+                return null; // 오류 발생 시 null 반환
+            }
+        }
+    };
+
     return (
         <div className='main'>
-            <h1>프로젝트 이미지</h1>
-            <img src={diaryImage} alt="Project Main" style={{ maxWidth: '100%', height: 'auto' }} />
-
             <section className='intro'>
                 <h1>MinSang Kim</h1>
                 <p>반갑습니다.</p>
@@ -133,7 +155,7 @@ const Main = () => {
             </section>
 
             {selectedProject && (
-                <div className="modal">
+                <div className="modal" onClick={handleBackdropClick}>
                     <div className="modal-content">
                         <span className="close" onClick={closeModal}>&times;</span>
                         <h2>{selectedProject.name}</h2>
@@ -142,13 +164,22 @@ const Main = () => {
                         <p><strong>사용한 기술:</strong> {selectedProject.technologies}</p>
                         <p><strong>어려웠던 점:</strong> {selectedProject.challenges}</p>
                         <p><strong>결과물:</strong> {selectedProject.results}</p>
-                        <div>
-                            <strong>메인페이지:</strong>
-                            {selectedProject.images.main && (
-                                <img src={selectedProject.images.main} 
-                                alt="Project Main"
-                                style={{ maxWidth: '100%', height: 'auto' }} />
-                            )}
+                        <div className='images'>
+                            {Object.keys(selectedProject).includes("images") && Object.keys(selectedProject.images).map((image) => (
+                                <div className='container' key={image}>
+                                    <p>{image}</p>
+                                    <img src={selectedProject.images[image]} 
+                                    alt={image}
+                                    style={{ maxWidth: '100%', height: 'auto' }} />
+                                </div>
+                            ))}
+                        </div>
+                        <div className='codes'>
+                            {Object.keys(selectedProject).includes("codes") && Object.keys(selectedProject.codes).map((code) => (
+                                <div className='container' key={code}>
+                                    <p>{handleLoadCode(selectedProject, '../data/SmartMirror/recognizer.txt')}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
