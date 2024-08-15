@@ -1,11 +1,26 @@
+import diaryImage from './MyDiary/글정보.png';
+
+const getImage = (imageName) => require(`./MyDiary/${imageName}`).default;
+
+const getBase64 = (file) => {
+    console.log(file);
+    if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+    }
+};
+
 export const ownProjects = [
     {
         name: '📓 My Diary, 간단한 일기 웹 앱',
         period: '2024.03 ~ 2024.03',
         teamSize: '1명',
         technologies: 'JavaScript, Node.js(Express), ejs, jQuery, bootstrap, MongoDB',
-        challenges: '일정 관리 및 데이터 저장',
-        results: '일기 작성 및 관리 기능'
+        challenges: '몽고DB, 무료 웹 배포',
+        results: '일기 작성 및 관리 기능',
+        images : {
+            main : getBase64(diaryImage),
+        }
     }
 ];
 
@@ -28,7 +43,7 @@ export const teamProjects = [
     },
     {
         name: '🍺 동네 술 친구 사귀기 웹 앱',
-        period: '2024.05 ~ 2024.11',
+        period: '2024.07 ~ 2024.08',
         teamSize: '4명',
         technologies: 'Java, JavaScript, Spring, React, Node.js(Express), MySQL, MongoDB, Firebase, Redis',
         challenges: '실시간 채팅 및 매칭 알고리즘',

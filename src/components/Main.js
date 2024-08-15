@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { ownProjects, teamProjects } from '../data/project';
+import diaryImage from '../data/MyDiary/글정보.png';
 
 const Main = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -18,6 +19,9 @@ const Main = () => {
 
     return (
         <div className='main'>
+            <h1>프로젝트 이미지</h1>
+            <img src={diaryImage} alt="Project Main" style={{ maxWidth: '100%', height: 'auto' }} />
+
             <section className='intro'>
                 <h1>MinSang Kim</h1>
                 <p>반갑습니다.</p>
@@ -81,7 +85,7 @@ const Main = () => {
                 </table>
             </section>
 
-            <section className='education'>
+            {/* <section className='education'>
                 <h1>EDUCATION</h1>
                 <div className='education-content'>
                     <p className='college'>대구대학교 <span style={{ color: '#c0c0c0' }}>(2019.03~2023.02)</span></p>
@@ -89,7 +93,7 @@ const Main = () => {
                         <p className='major'>전자공학 - 학사 (4.19 / 4.5)</p>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section className='projects'>
                 <h1>PROJECTS</h1>
@@ -138,6 +142,14 @@ const Main = () => {
                         <p><strong>사용한 기술:</strong> {selectedProject.technologies}</p>
                         <p><strong>어려웠던 점:</strong> {selectedProject.challenges}</p>
                         <p><strong>결과물:</strong> {selectedProject.results}</p>
+                        <div>
+                            <strong>메인페이지:</strong>
+                            {selectedProject.images.main && (
+                                <img src={selectedProject.images.main} 
+                                alt="Project Main"
+                                style={{ maxWidth: '100%', height: 'auto' }} />
+                            )}
+                        </div>
                     </div>
                 </div>
             )}
