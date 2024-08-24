@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7653d26a.css",
-    "main.js": "/portfolio/static/js/main.cc4207ff.js",
+    "main.css": "/portfolio/static/css/main.ecf6588e.css",
+    "main.js": "/portfolio/static/js/main.8c512873.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/실제품.png": "/portfolio/static/media/실제품.310ad333966ad60b3316.png",
     "static/media/매거진.png": "/portfolio/static/media/매거진.6bbcd9c07dd08f96a7f7.png",
@@ -31,12 +31,12 @@
     "static/media/register.txt": "/portfolio/static/media/register.b1bd1562036ec99abcc0.txt",
     "static/media/training.txt": "/portfolio/static/media/training.7a02b7c5b6b28c8351e1.txt",
     "index.html": "/portfolio/index.html",
-    "main.7653d26a.css.map": "/portfolio/static/css/main.7653d26a.css.map",
-    "main.cc4207ff.js.map": "/portfolio/static/js/main.cc4207ff.js.map",
+    "main.ecf6588e.css.map": "/portfolio/static/css/main.ecf6588e.css.map",
+    "main.8c512873.js.map": "/portfolio/static/js/main.8c512873.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7653d26a.css",
-    "static/js/main.cc4207ff.js"
+    "static/css/main.ecf6588e.css",
+    "static/js/main.8c512873.js"
   ]
 }
