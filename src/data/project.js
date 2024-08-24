@@ -13,6 +13,17 @@ import smartMirrorOff from './SmartMirror/절전.png';
 import smartMirrorTraining from './SmartMirror/트레이닝.png';
 import smartMirrorDB from './SmartMirror/파이어베이스.png';
 
+import cheeusAdmin from './Cheeus/어드민.PNG';
+import cheeusAdminUser from './Cheeus/어드민유저관리.PNG';
+import cheeusGoogleLogin from './Cheeus/구글로그인.PNG';
+import cheeusLogin from './Cheeus/로그인.PNG';
+import cheeusMagazine from './Cheeus/매거진.png';
+import cheeusMain from './Cheeus/치어스메인.PNG';
+import cheeusMypage from './Cheeus/마이페이지.PNG';
+import cheeusSMSAuth from './Cheeus/전번인증.jpg';
+import cheeusSignup from './Cheeus/회원가입.PNG';
+import cheeusWritePost from './Cheeus/글쓰기.PNG'
+
 export const ownProjects = [
     {
         name: '📓 My Diary, 간단한 일기 웹 앱',
@@ -67,6 +78,18 @@ export const teamProjects = [
         teamSize: '4명',
         technologies: 'Java, JavaScript, Spring, React, Node.js(Express), MySQL, MongoDB, Firebase, Redis',
         challenges: '실시간 채팅 및 매칭 알고리즘',
-        results: '동네 술 친구 찾기 웹 앱'
+        results: '동네 술 친구 찾기 웹 앱',
+        images : {
+            메인페이지 : cheeusMain,
+            로그인페이지 : cheeusLogin,
+            구글로그인 : cheeusGoogleLogin,
+            회원가입페이지 : cheeusSignup,
+            전번인증 : cheeusSMSAuth,
+            글쓰기 : cheeusWritePost,
+            매거진 : cheeusMagazine,
+            마이페이지 : cheeusMypage,
+            어드민 : cheeusAdmin,
+            어드민유저관리 : cheeusAdminUser
+        }
     }
 ];
